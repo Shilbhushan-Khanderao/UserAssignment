@@ -35,8 +35,8 @@ public class User {
 	@Column(name = "mobilenumber")
 	private String mobilenumber;
 	
-	@Column(name = "role")
-	private String role;
+	@Column(name = "gender")
+	private String gender;
 	
 	@JsonManagedReference
 	@OneToOne(cascade = CascadeType.ALL)
@@ -51,7 +51,7 @@ public class User {
 	}
 
 
-	public User(int id, String firstName, String middleName, String lastName, String email, String mobileno, String role,
+	public User(int id, String firstName, String middleName, String lastName, String email, String mobileno, String gender,
 			Address address) {
 		super();
 		this.userId = id;
@@ -60,7 +60,7 @@ public class User {
 		this.lastname = lastName;
 		this.email = email;
 		this.mobilenumber = mobileno;
-		this.role = role;
+		this.gender = gender;
 		this.address = address;
 	}
 
@@ -135,13 +135,13 @@ public class User {
 	}
 
 
-	public String getRole() {
-		return role;
+	public String getGender() {
+		return gender;
 	}
 
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 
@@ -158,7 +158,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstname=" + firstname + ", middlename=" + middlename + ", lastname="
-				+ lastname + ", email=" + email + ", mobilenumber=" + mobilenumber + ", role=" + role + ", address="
+				+ lastname + ", email=" + email + ", mobilenumber=" + mobilenumber + ", gender=" + gender + ", address="
 				+ address + "]";
 	}
 
